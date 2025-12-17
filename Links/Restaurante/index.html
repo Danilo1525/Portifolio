@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurante Bom Sabor</title>
+    <!-- Adicionando uma fonte mais moderna do Google -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* --- Reset e Variáveis --- */
+        :root {
+            --cor-primaria: #ff6600;
+            --cor-primaria-escuro: #e65c00;
+            --cor-texto: #333;
+            --cor-fundo: #f9f9f9;
+            --sombra-suave: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            line-height: 1.6;
+            background-color: var(--cor-fundo);
+            color: var(--cor-texto);
+        }
+
+        /* --- Cabeçalho --- */
+        header {
+            background-color: var(--cor-primaria);
+            color: white;
+            padding: 1.5rem 0;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        header h1 {
+            margin-bottom: 15px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Navegação */
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            margin: 0 20px;
+            font-size: 1rem;
+            padding: 5px 10px;
+            border-radius: 20px;
+            transition: background-color 0.3s;
+        }
+
+        nav a:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+            text-decoration: none;
+        }
+
+        /* --- Layout --- */
+        .container {
+            max-width: 1000px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+
+        section {
+            background: white;
+            padding: 40px;
+            margin-bottom: 40px;
+            border-radius: 8px;
+            box-shadow: var(--sombra-suave);
+        }
+
+        h2 {
+            color: var(--cor-primaria);
+            border-bottom: 3px solid var(--cor-primaria);
+            display: inline-block;
+            padding-bottom: 5px;
+            margin-bottom: 25px;
+        }
+
+        /* --- Seção Início --- */
+        #inicio img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-top: 20px;
+            box-shadow: var(--sombra-suave);
+        }
+
+        /* --- Menu (Grid) --- */
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .item-menu {
+            border: 1px solid #eee;
+            padding: 15px;
+            text-align: center;
+            border-radius: 8px;
+            background: #fff;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        /* Efeito ao passar o mouse no prato */
+        .item-menu:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+            border-color: transparent;
+        }
+
+        .item-menu img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 6px;
+            margin-bottom: 15px;
+        }
+
+        .item-menu h3 {
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+        }
+
+        .preco {
+            display: block;
+            margin-top: 15px;
+            font-size: 1.3rem;
+            color: #27ae60;
+            font-weight: 800;
+        }
+
+        /* --- Formulário --- */
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            font-weight: 600;
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-family: inherit;
+            transition: border-color 0.3s;
+        }
+
+        input:focus, textarea:focus {
+            outline: none;
+            border-color: var(--cor-primaria);
+            box-shadow: 0 0 5px rgba(255, 102, 0, 0.2);
+        }
+
+        button {
+            background-color: var(--cor-primaria);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            font-size: 1rem;
+            font-weight: bold;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.1s;
+            width: auto;
+            display: block;
+            margin: 20px auto 0;
+        }
+
+        button:hover {
+            background-color: var(--cor-primaria-escuro);
+            transform: scale(1.05);
+        }
+
+        /* --- Rodapé --- */
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            background-color: #2c3e50;
+            color: #bdc3c7;
+            margin-top: 40px;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 600px) {
+            nav a {
+                display: block;
+                margin: 10px 0;
+                background-color: rgba(255,255,255,0.1);
+            }
+            
+            section {
+                padding: 20px;
+            }
+
+            h2 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Restaurante Bom Sabor</h1>
+        <nav>
+            <a href="#inicio">Início</a>
+            <a href="#menu">Cardápio</a>
+            <a href="#contato">Contato</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        
+        <!-- Seção Início -->
+        <section id="inicio">
+            <h2>Bem-vindo à nossa casa</h2>
+            <p>Descubra o verdadeiro sabor da comida caseira. Ingredientes frescos, receitas de família e um ambiente preparado para receber você e quem você ama com todo carinho.</p>
+            <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" alt="Ambiente do Restaurante">
+        </section>
+
+        <!-- Seção Menu -->
+        <section id="menu">
+            <h2>Nosso Cardápio</h2>
+            <div class="menu-grid">
+                <!-- Prato 1 -->
+                <div class="item-menu">
+                    <img src="https://images.unsplash.com/photo-1563379926898-05f4575a45d8?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Macarronada">
+                    <h3>Macarronada da Nonna</h3>
+                    <p>Massa fresca com molho de tomate caseiro e manjericão.</p>
+                    <span class="preco">R$ 28,00</span>
+                </div>
+                <!-- Prato 2 -->
+                <div class="item-menu">
+                    <img src="https://images.unsplash.com/photo-1544025162-d76694265947?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Prato Feito">
+                    <h3>Prato Executivo</h3>
+                    <p>Arroz soltinho, feijão carioca, bife acebolado e fritas crocantes.</p>
+                    <span class="preco">R$ 32,00</span>
+                </div>
+                <!-- Prato 3 -->
+                <div class="item-menu">
+                    <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Pizza">
+                    <h3>Pizza Broto Especial</h3>
+                    <p>Massa fina, muita mussarela, tomate e orégano fresco.</p>
+                    <span class="preco">R$ 24,00</span>
+                </div>
+                <!-- Prato 4 -->
+                <div class="item-menu">
+                    <img src="https://images.unsplash.com/photo-1551024601-bec78aea704b?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Sobremesa">
+                    <h3>Cheesecake de Frutas</h3>
+                    <p>Sobremesa leve com calda de frutas vermelhas.</p>
+                    <span class="preco">R$ 18,00</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção Contato -->
+        <section id="contato">
+            <h2>Fale Conosco</h2>
+            <p style="margin-bottom: 20px;">Dúvidas ou reservas? Mande uma mensagem!</p>
+            <form>
+                <div class="form-group">
+                    <label>Seu Nome:</label>
+                    <input type="text" placeholder="Ex: Maria Silva">
+                </div>
+                <div class="form-group">
+                    <label>Seu Email:</label>
+                    <input type="email" placeholder="Ex: maria@email.com">
+                </div>
+                <div class="form-group">
+                    <label>Mensagem:</label>
+                    <textarea rows="4" placeholder="Gostaria de reservar uma mesa para..."></textarea>
+                </div>
+                <button type="submit">Enviar Mensagem</button>
+            </form>
+        </section>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Restaurante Bom Sabor. Feito com carinho.</p>
+    </footer>
+
+</body>
+</html>
