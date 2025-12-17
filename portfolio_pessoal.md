@@ -75,26 +75,6 @@ O projeto foi construído apenas com tecnologias nativas, garantindo **performan
 
 ---
 
-## 🚀 Como Executar
-
-Este é um **projeto estático**, não requer instalação de dependências.
-
-### 1️⃣ Clone o repositório
-
-```bash
-git clone https://github.com/Danilo1525/seu-repositorio.git
-```
-
-### 2️⃣ Abra o projeto
-
-Basta abrir o arquivo `index.html` em qualquer navegador moderno:
-
-- Google Chrome
-- Mozilla Firefox
-- Microsoft Edge
-
----
-
 ## 🎨 Paleta de Cores
 
 | Elemento | Cor | Hex |
@@ -113,8 +93,4 @@ Basta abrir o arquivo `index.html` em qualquer navegador moderno:
 - 💼 LinkedIn: Danilo Martinez
 - 📸 Instagram: **@danilo_martinezf**
 - 💻 GitHub: **Danilo1525**
-
----
-
-Desenvolvido com 💙 e muito café ☕
 
