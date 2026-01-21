@@ -1,6 +1,6 @@
 // ANIMAÇÃO DE DIGITAÇÃO INFINITA
 const elementoTexto = document.querySelector(".texto-dinamico");
-const palavras = ["Front-end", "UI Designer", "Freelancer", "Criativo"];
+const palavras = ["Front-end", "FullStack", "Back-End", "Criativo"];
 let indicePalavra = 0;
 let indiceLetra = 0;
 let isApagando = false;
