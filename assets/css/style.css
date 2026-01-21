@@ -706,6 +706,9 @@ main {
   .container-principal {
     padding: 0 15px;
   }
+  .links-navegacao {
+    display: none;
+  }
   .logo-site {
     font-size: 22px;
   }
