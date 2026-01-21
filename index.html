@@ -21,12 +21,16 @@
     />
   </head>
   <body>
+    <!-- HEADER -->
     <header class="cabecalho">
       <nav class="menu-superior">
         <div class="container-principal menu-flex">
           <a href="#" class="logo-site" aria-label="Voltar ao topo">
             &lt;DM <span>/&gt;</span>
           </a>
+
+          <!-- Botão Mobile removido daqui -->
+
           <div class="links-navegacao">
             <a href="#inicio">Início</a>
             <a href="#sobre">Sobre</a>
@@ -39,26 +43,34 @@
       </nav>
     </header>
 
+    <!-- MAIN -->
     <main>
+      <!-- SEÇÃO HERO -->
       <section id="inicio" class="container-principal secao-apresentacao">
         <div class="bloco-texto">
           <div class="wrapper-digitacao">
             <span class="destaque-topo">Olá, eu sou</span>
           </div>
+
           <h1>
             Danilo Martinez<br />
+            <!-- O span abaixo muda de texto sozinho via JS -->
             <span class="texto-dinamico"></span
             ><span class="cursor-pisca">|</span>
           </h1>
+
           <p class="anime-scroll">
             Transformo ideias em experiências digitais de alto impacto.
             Especialista em criar interfaces web modernas, rápidas e acessíveis.
           </p>
+
           <div class="botoes-hero anime-scroll delay-1">
             <a href="#projetos" class="botao-destaque">Ver Projetos</a>
             <a href="#contato" class="botao-outline">Fale Comigo</a>
           </div>
         </div>
+
+        <!-- Ícone Flutuante -->
         <figure class="bloco-visual anime-scroll delay-2">
           <div class="circulo-bg"></div>
           <svg
@@ -73,6 +85,8 @@
           </svg>
         </figure>
       </section>
+
+      <!-- SEÇÃO SOBRE -->
       <section id="sobre" class="secao-padrao">
         <div class="container-principal">
           <h2 class="titulo-secao anime-scroll">Sobre Mim</h2>
@@ -98,6 +112,8 @@
           </div>
         </div>
       </section>
+
+      <!-- SEÇÃO HABILIDADES -->
       <section id="habilidades" class="secao-padrao">
         <div class="container-principal">
           <h2 class="titulo-secao anime-scroll">Tecnologias</h2>
@@ -243,7 +259,6 @@
       </div>
     </footer>
 
-    <!-- Script Importado -->
     <script src="assets/js/script.js"></script>
   </body>
 </html>
