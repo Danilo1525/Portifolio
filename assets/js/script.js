@@ -47,7 +47,7 @@ const observador = new IntersectionObserver(
   },
   {
     threshold: 0.1,
-  }
+  },
 );
 
 const elementosAnime = document.querySelectorAll(".anime-scroll");
@@ -58,3 +58,29 @@ const anoSpan = document.getElementById("ano-atual");
 if (anoSpan) {
   anoSpan.textContent = new Date().getFullYear();
 }
+
+// MENU MOBILE
+
+const btnMobile = document.querySelector(".btn-mobile");
+const navLinks = document.querySelector(".links-navegacao");
+
+function toggleMenu() {
+  if (navLinks && btnMobile) {
+    navLinks.classList.toggle("ativo");
+    btnMobile.classList.toggle("ativo");
+  }
+}
+
+if (btnMobile) {
+  btnMobile.addEventListener("click", toggleMenu);
+}
+
+// Fecha o menu ao clicar em um link
+document.querySelectorAll(".links-navegacao a").forEach((link) => {
+  link.addEventListener("click", () => {
+    if (navLinks && btnMobile) {
+      navLinks.classList.remove("ativo");
+      btnMobile.classList.remove("ativo");
+    }
+  });
+});

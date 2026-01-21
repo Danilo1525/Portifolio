@@ -155,6 +155,38 @@ ul {
   background: var(--cor-destaque);
   color: #000 !important;
 }
+/* --- HAMBURGUER (Mobile) --- */
+.btn-mobile {
+  display: none;
+  background: none;
+  border: 0;
+  cursor: pointer;
+}
+
+/* Ícone hambúrguer */
+.hamburguer {
+  width: 28px;
+  height: 3px;
+  background: var(--cor-destaque);
+  position: relative;
+}
+
+.hamburguer::before,
+.hamburguer::after {
+  content: "";
+  width: 100%;
+  height: 3px;
+  background: var(--cor-destaque);
+  position: absolute;
+  left: 0;
+}
+
+.hamburguer::before {
+  top: -8px;
+}
+.hamburguer::after {
+  top: 8px;
+}
 
 /* --- MAIN LAYOUT --- */
 main {
@@ -650,28 +682,41 @@ main {
 
 /* ---  TABLETS E MOBILE PADRÃO (max-width: 768px) --- */
 @media (max-width: 768px) {
+  .btn-mobile {
+    display: block;
+  }
+
   .menu-superior {
-    height: auto;
-    padding: 10px 0;
+    height: 70px; 
+    justify-content: space-between;
   }
-  .menu-flex {
-    flex-direction: column;
-    gap: 15px;
-  }
+
   .links-navegacao {
     display: flex;
-    flex-direction: column;
-    gap: 15px;
+    position: fixed;
     width: 100%;
-    text-align: center;
-    position: static;
-    height: auto;
-    background: transparent;
-    padding: 10px 0;
+    height: 100vh;
+    background: #0f172a; 
+    top: 70px;
+    right: -100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding-top: 50px;
+    gap: 30px;
+    transition: 0.4s ease-in-out;
+    z-index: 1000;
   }
+
+  /* Menu Aberto */
+  .links-navegacao.ativo {
+    right: 0;
+  }
+
   .links-navegacao a {
-    font-size: 18px;
+    font-size: 22px;
   }
+
   .secao-apresentacao {
     flex-direction: column;
     text-align: center;
@@ -681,6 +726,10 @@ main {
   }
   .bloco-texto h1 {
     font-size: 42px;
+  }
+  .conteudo-sobre {
+    grid-template-columns: 1fr;
+    gap: 40px;
   }
   .botoes-hero {
     justify-content: center;
@@ -701,13 +750,10 @@ main {
   }
 }
 
-/* ---  TELAS MUITO PEQUENAS (Menor que 360px) --- */
-@media (max-width: 360px) {
+/* --- 4. TELAS MUITO PEQUENAS (Menor que 360px) --- */
+@media (max-width: 359px) {
   .container-principal {
     padding: 0 15px;
-  }
-  .links-navegacao {
-    display: none;
   }
   .logo-site {
     font-size: 22px;
@@ -722,26 +768,22 @@ main {
   .bloco-texto p {
     font-size: 14px;
   }
-
   .botao-destaque,
   .botao-outline {
     padding: 12px 20px;
     font-size: 14px;
   }
+  .conteudo-sobre {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
   .titulo-secao {
     font-size: 32px;
   }
-
-  .conteudo-sobre {
-    gap: 30px;
-    grid-template-columns: 1fr;
-  }
-
   .icone-flutuante {
     width: 150px;
     height: 150px;
   }
-
   .botao-social {
     width: 45px;
     height: 45px;
@@ -749,7 +791,6 @@ main {
   .botao-social img {
     width: 20px;
   }
-
   .cartao-icone {
     height: 140px;
   }
