@@ -27,8 +27,7 @@ body {
   background-color: var(--cor-fundo);
   color: var(--cor-texto-principal);
   overflow-x: hidden;
-  background-image:
-    radial-gradient(
+  background-image: radial-gradient(
       circle at 10% 20%,
       rgba(56, 189, 248, 0.03) 0%,
       transparent 20%
@@ -94,11 +93,11 @@ ul {
   background: rgba(15, 23, 42, 0.95);
   border-bottom: 1px solid rgba(255, 255, 255, 0.05);
   backdrop-filter: blur(12px);
-  padding: 10px 0; /* Adicionado um pouco de padding */
+  padding: 10px 0;
 }
 
 .menu-superior {
-  min-height: 60px; /* Altura mínima flexível */
+  min-height: 60px;
   display: flex;
   align-items: center;
 }
@@ -108,7 +107,7 @@ ul {
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  flex-wrap: wrap; /* Permite quebrar linha no mobile */
+  flex-wrap: wrap;
 }
 
 .logo-site {
@@ -157,7 +156,7 @@ ul {
 
 /* --- MAIN LAYOUT --- */
 main {
-  padding-top: 100px; /* Aumentado para compensar header maior no mobile */
+  padding-top: 100px;
 }
 
 .secao-padrao {
@@ -224,13 +223,8 @@ main {
 }
 
 @keyframes piscar {
-  0%,
-  100% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0;
-  }
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
 }
 
 .bloco-texto p {
@@ -557,6 +551,7 @@ main {
   transform: translateY(0);
 }
 
+/* Delays */
 .delay-1 {
   transition-delay: 0.2s;
 }
@@ -571,84 +566,38 @@ main {
 }
 
 @keyframes pulse {
-  0% {
-    transform: scale(1);
-    opacity: 0.2;
-  }
-  100% {
-    transform: scale(1.1);
-    opacity: 0.3;
-  }
+  0% { transform: scale(1); opacity: 0.2; }
+  100% { transform: scale(1.1); opacity: 0.3; }
 }
 
 @keyframes flutuar {
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-20px);
-  }
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
 }
 
+
+/* --- 2. TELAS 2K (QHD) - Entre 1441px e 2499px --- */
 @media (min-width: 1441px) and (max-width: 2499px) {
-  .container-principal {
-    max-width: 1600px;
-  }
-
-  .titulo-secao {
-    font-size: 56px;
-  }
-
-  .bloco-texto h1 {
-    font-size: 80px;
-  }
-
-  .icone-flutuante {
-    width: 450px;
-    height: 450px;
-  }
+  .container-principal { max-width: 1600px; }
+  .titulo-secao { font-size: 56px; }
+  .bloco-texto h1 { font-size: 80px; }
+  .icone-flutuante { width: 450px; height: 450px; }
 }
+
+/* --- 3. NOTEBOOKS / HD (1366x768 e 1280x720) --- */
 @media (max-width: 1366px) {
-  .container-principal {
-    max-width: 1200px;
-  }
-
-  .titulo-secao {
-    font-size: 42px;
-    margin-bottom: 40px;
-  }
-
-  .bloco-texto h1 {
-    font-size: 56px;
-  }
-
-  .bloco-texto p {
-    font-size: 18px;
-  }
-
-  .icone-flutuante {
-    width: 350px;
-    height: 350px;
-  }
-
-  .secao-padrao {
-    padding: 80px 0;
-  }
+  .container-principal { max-width: 1200px; }
+  .titulo-secao { font-size: 42px; margin-bottom: 40px; }
+  .bloco-texto h1 { font-size: 56px; }
+  .bloco-texto p { font-size: 18px; }
+  .icone-flutuante { width: 350px; height: 350px; }
+  .secao-padrao { padding: 80px 0; }
 }
 
-
+/* --- 4. TABLETS E MOBILE PADRÃO (max-width: 768px) --- */
 @media (max-width: 768px) {
-  .menu-superior {
-    height: auto;
-    padding: 10px 0;
-  }
-
-  .menu-flex {
-    flex-direction: column;
-    gap: 15px;
-  }
-
+  .menu-superior { height: auto; padding: 10px 0; }
+  .menu-flex { flex-direction: column; gap: 15px; }
   .links-navegacao {
     display: flex;
     flex-direction: column;
@@ -660,11 +609,7 @@ main {
     background: transparent;
     padding: 10px 0;
   }
-
-  .links-navegacao a {
-    font-size: 18px;
-  }
-
+  .links-navegacao a { font-size: 18px; }
   .secao-apresentacao {
     flex-direction: column;
     text-align: center;
@@ -672,84 +617,26 @@ main {
     padding-top: 50px;
     gap: 40px;
   }
+  .bloco-texto h1 { font-size: 42px; }
+  .botoes-hero { justify-content: center; }
+  .botao-destaque, .botao-outline { width: 100%; padding: 14px; }
+  .icone-flutuante { width: 200px; height: 200px; margin-top: 20px; }
 
-  .bloco-texto h1 {
-    font-size: 42px;
-  }
-
-  .botoes-hero {
-    justify-content: center;
-  }
-
-  .botao-destaque,
-  .botao-outline {
-    width: 100%;
-    padding: 14px;
-  }
-
-  .icone-flutuante {
-    width: 200px;
-    height: 200px;
-    margin-top: 20px;
-  }
-
-  .grade-servicos,
-  .lista-projetos {
-    grid-template-columns: 1fr;
-  }
+  .lista-projetos { grid-template-columns: 1fr; }
 }
 
+/* --- 5. TELAS MUITO PEQUENAS (Menor que 360px) --- */
 @media (max-width: 359px) {
-  .container-principal {
-    padding: 0 15px;
-  }
-
-  .logo-site {
-    font-size: 22px;
-  }
-
-  .bloco-texto h1 {
-    font-size: 32px; 
-  }
-
-  .destaque-topo {
-    font-size: 12px;
-    padding: 4px 10px;
-  }
-
-  .bloco-texto p {
-    font-size: 14px;
-  }
-
-  .botao-destaque,
-  .botao-outline {
-    padding: 12px 20px;
-    font-size: 14px;
-  }
-
-  .titulo-secao {
-    font-size: 32px;
-  }
-
-  .icone-flutuante {
-    width: 150px;
-    height: 150px;
-  }
-
-  .botao-social {
-    width: 45px;
-    height: 45px;
-  }
-
-  .botao-social img {
-    width: 20px;
-  }
-
-  .cartao-icone {
-    height: 140px;
-  }
-
-  .info-projeto {
-    padding: 20px;
-  }
+  .container-principal { padding: 0 15px; }
+  .logo-site { font-size: 22px; }
+  .bloco-texto h1 { font-size: 32px; }
+  .destaque-topo { font-size: 12px; padding: 4px 10px; }
+  .bloco-texto p { font-size: 14px; }
+  .botao-destaque, .botao-outline { padding: 12px 20px; font-size: 14px; }
+  .titulo-secao { font-size: 32px; }
+  .icone-flutuante { width: 150px; height: 150px; }
+  .botao-social { width: 45px; height: 45px; }
+  .botao-social img { width: 20px; }
+  .cartao-icone { height: 140px; }
+  .info-projeto { padding: 20px; }
 }
