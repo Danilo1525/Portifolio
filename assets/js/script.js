@@ -1,5 +1,6 @@
+// ANIMAÇÃO DE DIGITAÇÃO INFINITA
 const elementoTexto = document.querySelector(".texto-dinamico");
-const palavras = ["Front-end", "FullStack", "Back-End", "Criativo"];
+const palavras = ["Front-end", "UI Designer", "Freelancer", "Criativo"];
 let indicePalavra = 0;
 let indiceLetra = 0;
 let isApagando = false;
@@ -36,7 +37,6 @@ function digitar() {
 document.addEventListener("DOMContentLoaded", digitar);
 
 // ANIMAÇÃO AO SCROLL
-
 const observador = new IntersectionObserver(
   (entries) => {
     entries.forEach((entry) => {
@@ -47,11 +47,13 @@ const observador = new IntersectionObserver(
   },
   {
     threshold: 0.1,
-  },
+  }
 );
 
-//ANO ATUAL AUTOMÁTICO
+const elementosAnime = document.querySelectorAll(".anime-scroll");
+elementosAnime.forEach((elemento) => observador.observe(elemento));
 
+// ANO ATUAL AUTOMÁTICO
 const anoSpan = document.getElementById("ano-atual");
 if (anoSpan) {
   anoSpan.textContent = new Date().getFullYear();
