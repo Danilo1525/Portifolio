@@ -592,9 +592,54 @@ main {
   }
 }
 
-/* --- RESPONSIVIDADE (MOBILE) --- */
+@media (min-width: 1441px) and (max-width: 2499px) {
+  .container-principal {
+    max-width: 1600px;
+  }
+
+  .titulo-secao {
+    font-size: 56px;
+  }
+
+  .bloco-texto h1 {
+    font-size: 80px;
+  }
+
+  .icone-flutuante {
+    width: 450px;
+    height: 450px;
+  }
+}
+@media (max-width: 1366px) {
+  .container-principal {
+    max-width: 1200px;
+  }
+
+  .titulo-secao {
+    font-size: 42px;
+    margin-bottom: 40px;
+  }
+
+  .bloco-texto h1 {
+    font-size: 56px;
+  }
+
+  .bloco-texto p {
+    font-size: 18px;
+  }
+
+  .icone-flutuante {
+    width: 350px;
+    height: 350px;
+  }
+
+  .secao-padrao {
+    padding: 80px 0;
+  }
+}
+
+
 @media (max-width: 768px) {
-  /* No mobile, ajustamos o header para empilhar os itens */
   .menu-superior {
     height: auto;
     padding: 10px 0;
@@ -607,11 +652,10 @@ main {
 
   .links-navegacao {
     display: flex;
-    flex-direction: column; /* Empilha os links */
+    flex-direction: column;
     gap: 15px;
     width: 100%;
     text-align: center;
-    /* Reset das propriedades que escondiam o menu */
     position: static;
     height: auto;
     background: transparent;
@@ -648,5 +692,65 @@ main {
     width: 200px;
     height: 200px;
     margin-top: 20px;
+  }
+
+  .grade-servicos,
+  .lista-projetos {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 359px) {
+  .container-principal {
+    padding: 0 15px;
+  }
+
+  .logo-site {
+    font-size: 22px;
+  }
+
+  .bloco-texto h1 {
+    font-size: 32px; 
+  }
+
+  .destaque-topo {
+    font-size: 12px;
+    padding: 4px 10px;
+  }
+
+  .bloco-texto p {
+    font-size: 14px;
+  }
+
+  .botao-destaque,
+  .botao-outline {
+    padding: 12px 20px;
+    font-size: 14px;
+  }
+
+  .titulo-secao {
+    font-size: 32px;
+  }
+
+  .icone-flutuante {
+    width: 150px;
+    height: 150px;
+  }
+
+  .botao-social {
+    width: 45px;
+    height: 45px;
+  }
+
+  .botao-social img {
+    width: 20px;
+  }
+
+  .cartao-icone {
+    height: 140px;
+  }
+
+  .info-projeto {
+    padding: 20px;
   }
 }
