@@ -5,7 +5,7 @@ let indiceLetra = 0;
 let isApagando = false;
 
 function digitar() {
-  if (!elementoTexto) return; // Evita erro se o elemento não existir
+  if (!elementoTexto) return;
 
   const palavraAtual = palavras[indicePalavra];
 
@@ -34,3 +34,25 @@ function digitar() {
 }
 
 document.addEventListener("DOMContentLoaded", digitar);
+
+// ANIMAÇÃO AO SCROLL
+
+const observador = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("ativo");
+      }
+    });
+  },
+  {
+    threshold: 0.1,
+  },
+);
+
+//ANO ATUAL AUTOMÁTICO
+
+const anoSpan = document.getElementById("ano-atual");
+if (anoSpan) {
+  anoSpan.textContent = new Date().getFullYear();
+}
