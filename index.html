@@ -5,13 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Portfólio de Danilo Martinez - Desenvolvedor Web"
+      content="Portfólio de Danilo Martinez - Desenvolvedor Web Front-end"
     />
     <title>Danilo Martinez | Desenvolvedor Web</title>
 
-    <link rel="stylesheet" href="assets/css/style.css " />
+    <!-- Link para o CSS (Agora dentro da pasta assets/css) -->
+    <link rel="stylesheet" href="assets/css/style.css" />
 
-    <!-- Fonte -->
+    <!-- Fontes Google -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -20,150 +21,231 @@
     />
   </head>
   <body>
-    <!-- MENU SUPERIOR -->
-    <nav class="menu-superior">
-      <div class="container-principal menu-flex">
-        <a href="#" class="logo-site">&lt;DM <span>/&gt;</span></a>
-        <div class="links-navegacao">
-          <a href="#inicio">Início</a>
-          <a href="#habilidades">Habilidades</a>
-          <a href="#projetos">Projetos</a>
-          <a href="#contato">Contato</a>
-        </div>
-      </div>
-    </nav>
+    <!-- HEADER -->
+    <header class="cabecalho">
+      <nav class="menu-superior">
+        <div class="container-principal menu-flex">
+          <a href="#" class="logo-site" aria-label="Voltar ao topo">
+            &lt;DM <span>/&gt;</span>
+          </a>
 
-    <!-- SEÇÃO PRINCIPAL (INÍCIO) -->
-    <section id="inicio" class="container-principal secao-apresentacao">
-      <div class="bloco-texto">
-        <h1>Olá, sou <br /><span>Danilo Martinez</span></h1>
-        <p>
-          Desenvolvedor Web apaixonado por criar interfaces modernas. Transformo
-          ideias em experiências digitais simples e bonitas.
-        </p>
-        <a href="#projetos" class="botao-destaque">Ver Meu Trabalho</a>
-      </div>
+          <!-- Botão Mobile (Controlado pelo JS) -->
+          <button class="btn-mobile" aria-label="Abrir Menu">
+            <span class="hamburguer"></span>
+          </button>
 
-      <div class="bloco-habilidades" id="habilidades">
-        <div class="grade-icones">
-          <div class="cartao-icone">
-            <img src="assets/img/html5.svg" alt="HTML5" />
-            <span>HTML5</span>
-          </div>
-          <div class="cartao-icone">
-            <img src="assets/img/css3.svg" alt="css3" />
-            <span>CSS3</span>
-          </div>
-          <div class="cartao-icone">
-            <img src="assets/img/javascript.svg" alt="JavaScript" />
-            <span>JavaScript</span>
-          </div>
-          <div class="cartao-icone">
-            <img src="./assets/img/git.svg" alt="Git" />
-            <span>Git</span>
+          <div class="links-navegacao">
+            <a href="#inicio">Início</a>
+            <a href="#sobre">Sobre</a>
+            <a href="#servicos">Serviços</a>
+            <a href="#habilidades">Habilidades</a>
+            <a href="#projetos">Projetos</a>
+            <a href="#contato" class="botao-contato-nav">Contato</a>
           </div>
         </div>
-      </div>
-    </section>
+      </nav>
+    </header>
 
-    <!-- PROJETOS -->
-    <section id="projetos" class="secao-projetos">
-      <div class="container-principal">
-        <h2 class="titulo-secao">Meus Projetos</h2>
+    <!-- MAIN -->
+    <main>
+      <!-- SEÇÃO HERO (Com a animação de digitação) -->
+      <section id="inicio" class="container-principal secao-apresentacao">
+        <div class="bloco-texto">
+          <div class="wrapper-digitacao">
+            <span class="destaque-topo">Olá, eu sou</span>
+          </div>
 
-        <div class="lista-projetos">
-          <!-- PROJETO 1 -->
-          <article class="cartao-projeto">
-            <a
-              href="projects/dm-tech/index.html"
-              class="link-imagem"
-              aria-label="Ver Demo"
-            >
-              <img src="/assets/img/port1.png" alt="Projeto Institucional" />
-            </a>
-            <div class="info-projeto">
-              <div class="tags-tecnologia">
-                <span class="tag-item">HTML</span>
-                <span class="tag-item">CSS</span>
-              </div>
+          <h1>
+            Danilo Martinez<br />
+            <!-- O span abaixo muda de texto sozinho via JS -->
+            <span class="texto-dinamico"></span
+            ><span class="cursor-pisca">|</span>
+          </h1>
 
-              <h3 class="titulo-projeto">
-                <a href="projects/dm-tech/index.html" class="link-titulo"
-                  >Site Institucional</a
-                >
-              </h3>
-              <p class="texto-projeto">
-                Site moderno focado em serviços de tecnologia, com layout
-                totalmente responsivo e limpo.
+          <p class="anime-scroll">
+            Transformo ideias em experiências digitais de alto impacto.
+            Especialista em criar interfaces web modernas, rápidas e acessíveis.
+          </p>
+
+          <div class="botoes-hero anime-scroll delay-1">
+            <a href="#projetos" class="botao-destaque">Ver Projetos</a>
+            <a href="#contato" class="botao-outline">Fale Comigo</a>
+          </div>
+        </div>
+
+        <!-- Ícone Flutuante -->
+        <figure class="bloco-visual anime-scroll delay-2">
+          <div class="circulo-bg"></div>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="icone-flutuante"
+            viewBox="0 0 576 512"
+            fill="currentColor"
+          >
+            <path
+              d="M360.8 1.2c-17-4.9-34.7 5-39.6 22l-128 448c-4.9 17 5 34.7 22 39.6s34.7-5 39.6-22l128-448c4.9-17-5-34.7-22-39.6zm64.6 136.1c-12.5 12.5-12.5 32.8 0 45.3l73.4 73.4-73.4 73.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l96-96c12.5-12.5 12.5-32.8 0-45.3l-96-96c-12.5-12.5-32.8-12.5-45.3 0zm-274.7 0c-12.5-12.5-32.8-12.5-45.3 0l-96 96c-12.5 12.5-12.5 32.8 0 45.3l96 96c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256 150.6 182.6c12.5-12.5 12.5-32.8 0-45.3z"
+            />
+          </svg>
+        </figure>
+      </section>
+
+      <!-- SEÇÃO SOBRE -->
+      <section id="sobre" class="secao-padrao">
+        <div class="container-principal">
+          <h2 class="titulo-secao anime-scroll">Sobre Mim</h2>
+          <div class="conteudo-sobre anime-scroll">
+            <div class="texto-sobre">
+              <p>
+                Minha paixão pela tecnologia começou cedo e se transformou em
+                uma carreira dedicada ao desenvolvimento web. Com foco em
+                <strong>Front-end</strong>, busco constantemente novas formas de
+                criar interfaces funcionais e intuitivas.
               </p>
+            </div>
+            <div class="stats-sobre">
+              <div class="stat-item">
+                <span class="numero">+10</span>
+                <span class="legenda">Projetos</span>
+              </div>
+              <div class="stat-item">
+                <span class="numero">100%</span>
+                <span class="legenda">Qualidade</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
-              <div class="botoes-links">
+      <!-- SEÇÃO HABILIDADES -->
+      <section id="habilidades" class="secao-padrao">
+        <div class="container-principal">
+          <h2 class="titulo-secao anime-scroll">Tecnologias</h2>
+          <div class="grade-icones">
+            <!-- Atenção: Verifique se os nomes dos arquivos estão exatamente assim na pasta assets/img -->
+            <div class="cartao-icone anime-scroll delay-1">
+              <img src="assets/img/html5.svg" alt="HTML5" loading="lazy" />
+              <span>HTML5</span>
+            </div>
+            <div class="cartao-icone anime-scroll delay-2">
+              <img src="assets/img/css3.svg" alt="CSS3" loading="lazy" />
+              <span>CSS3</span>
+            </div>
+            <div class="cartao-icone anime-scroll delay-3">
+              <img
+                src="assets/img/javascript.svg"
+                alt="JavaScript"
+                loading="lazy"
+              />
+              <span>JavaScript</span>
+            </div>
+            <div class="cartao-icone anime-scroll delay-4">
+              <img src="assets/img/git.svg" alt="Git" loading="lazy" />
+              <span>Git</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SEÇÃO PROJETOS -->
+      <section id="projetos" class="secao-padrao bg-alternativo">
+        <div class="container-principal">
+          <h2 class="titulo-secao anime-scroll">Meus Projetos</h2>
+          <div class="lista-projetos">
+            <!-- Projeto 1 -->
+            <article class="cartao-projeto anime-scroll">
+              <div class="wrapper-imagem">
                 <a
                   href="projects/dm-tech/index.html"
-                  class="botao-projeto"
+                  class="link-imagem"
                   aria-label="Ver Demo"
                 >
-                  Ver Demo
+                  <img
+                    src="assets/img/port1.png"
+                    alt="Preview Site Institucional"
+                    loading="lazy"
+                  />
                 </a>
               </div>
-            </div>
-          </article>
-
-          <!-- PROJETO 2 -->
-          <article class="cartao-projeto">
-            <a
-              href="projects/restaurante/index.html"
-              class="link-imagem"
-              aria-label="Ver Demo"
-            >
-              <img src="assets/img/port2.png" alt="Restaurante Bom Sabor" />
-            </a>
-            <div class="info-projeto">
-              <div class="tags-tecnologia">
-                <span class="tag-item">HTML</span>
-                <span class="tag-item">CSS</span>
+              <div class="info-projeto">
+                <div class="tags-tecnologia">
+                  <span class="tag-item">HTML</span>
+                  <span class="tag-item">CSS</span>
+                </div>
+                <h3 class="titulo-projeto">
+                  <a href="projects/dm-tech/index.html" class="link-titulo"
+                    >Site Institucional</a
+                  >
+                </h3>
+                <p class="texto-projeto">
+                  Site moderno focado em serviços de tecnologia.
+                </p>
+                <div class="botoes-links">
+                  <a href="projects/dm-tech/index.html" class="botao-projeto">
+                    Ver Demo
+                  </a>
+                </div>
               </div>
+            </article>
 
-              <h3 class="titulo-projeto">
-                <a href="projects/restaurante/index.html" class="link-titulo"
-                  >Restaurante Bom Sabor</a
+            <!-- Projeto 2 -->
+            <article class="cartao-projeto anime-scroll delay-2">
+              <div class="wrapper-imagem">
+                <a
+                  href="projects/restaurante/index.html"
+                  class="link-imagem"
+                  aria-label="Ver Demo"
                 >
-              </h3>
-              <p class="texto-projeto">
-                Site responsivo com cardápio visual e formulário de contato,
-                desenvolvido puramente com HTML e CSS.
-              </p>
-              <div class="botoes-links">
-                <a href="projects/restaurante/index.html" class="botao-projeto">
-                  Ver Demo
+                  <img
+                    src="assets/img/port2.png"
+                    alt="Preview Restaurante"
+                    loading="lazy"
+                  />
                 </a>
               </div>
-            </div>
-          </article>
+              <div class="info-projeto">
+                <div class="tags-tecnologia">
+                  <span class="tag-item">HTML</span>
+                  <span class="tag-item">CSS</span>
+                </div>
+                <h3 class="titulo-projeto">
+                  <a href="projects/restaurante/index.html" class="link-titulo"
+                    >Restaurante Bom Sabor</a
+                  >
+                </h3>
+                <p class="texto-projeto">
+                  Site responsivo com cardápio visual.
+                </p>
+                <div class="botoes-links">
+                  <a
+                    href="projects/restaurante/index.html"
+                    class="botao-projeto"
+                  >
+                    Ver Demo
+                  </a>
+                </div>
+              </div>
+            </article>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </main>
 
-    <!-- RODAPÉ -->
+    <!-- FOOTER -->
     <footer id="contato" class="rodape-site">
       <div class="container-principal">
-        <h2 style="margin-bottom: 32px; color: white; font-size: 24px">
-          Vamos Conectar?
-        </h2>
+        <h2 class="titulo-footer">Vamos Conversar?</h2>
         <div class="icones-sociais">
           <a
             href="https://github.com/Danilo1525"
             target="_blank"
             class="botao-social"
-            aria-label="Github"
           >
-            <img src="assets/img/github.svg" alt="GitHub" />
+            <img src="assets/img/github.svg" alt="Github" />
           </a>
           <a
             href="https://www.linkedin.com/in/danilo-martinez-ferreira-136757302/"
             target="_blank"
             class="botao-social"
-            aria-label="LinkedIn"
           >
             <img src="assets/img/linkedin.svg" alt="LinkedIn" />
           </a>
@@ -171,15 +253,16 @@
             href="https://www.instagram.com/danilo_martinezf/"
             target="_blank"
             class="botao-social"
-            aria-label="Instagram"
           >
             <img src="assets/img/instagram.svg" alt="Instagram" />
           </a>
         </div>
-        <p style="color: var(--cor-texto-suave); font-size: 14px">
-          &copy; 2026 Danilo Martinez. Desenvolvido com HTML e CSS.
+        <p class="copyright-text">
+          &copy; <span id="ano-atual"></span> Danilo Martinez.
         </p>
       </div>
     </footer>
+
+    <script src="assets/js/script.js"></script>
   </body>
 </html>
